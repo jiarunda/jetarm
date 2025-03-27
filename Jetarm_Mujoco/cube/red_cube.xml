@@ -1,0 +1,11 @@
+<mujoco>
+    <worldbody>
+        <body name="red_block" pos="0.2 -0.03 0.435">
+            <joint name="red_block:joint" type="free" damping="5" frictionloss="1"/>
+            <geom name="red_block" size="0.015 0.015 0.015" rgba="1 0 0 1" type="box" conaffinity="0" contype="0" group="1"/>
+            <geom name="red_block_collision" size="0.015 0.015 0.015" type="box" conaffinity="1" contype="1" condim="4" group="4" mass="0.01" friction="1 1 1" solref="0.001 1" solimp="1 0.99 0.001"/>
+            <!-- <geom name="red_block_collision" size="0.015 0.015 0.015" type="box" conaffinity="1" contype="1" condim="4" group="4" mass="0.01" friction="1 1 1" solref="0.01 1" solimp="1 1 1"/> -->
+            <site name="red_block" pos="0 0 0" size="0.015 0.015 0.015" rgba="1 0 0 0.5" type="sphere" />
+        </body>
+    </worldbody>
+</mujoco>

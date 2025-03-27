@@ -1,0 +1,123 @@
+<mujoco model="jetarm_nohand">
+  <compiler angle="radian" autolimits="true"/>
+
+  <option integrator="implicitfast"/>
+
+  <default>
+    <default class="jetarm">
+      <joint armature="0.1" axis="0 0 1" range="-2.1 2.1"/>
+      <general dyntype="none" biastype="affine" ctrlrange="-2.1 2.1" forcerange="-20 20"/>
+      <default class="jetarm/visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="jetarm/collision">
+        <geom type="mesh" group="3"/>
+      </default>
+      <site size="0.001" rgba="0.8 0.8 0.8 1" group="4"/>
+    </default>
+  </default>
+
+  <asset>
+    <!-- Visual meshes -->
+    <!-- <mesh name="JetArm_6DOF_BASE_SCREEN" file="meshes/JetArm_6DOF_BASE_SCREEN.STL" scale="0.001 0.001 0.001"/> -->
+    <mesh name="JetArm_6DOF_BASE_GREEN" file="meshes/JetArm_6DOF_BASE_GREEN.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_BASE_BLACK" file="meshes/JetArm_6DOF_BASE_BLACK.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_BASE_WHITE" file="meshes/JetArm_6DOF_BASE_WHITE.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK1_BLACK" file="meshes/JetArm_6DOF_LINK1_BLACK.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK1_GREEN" file="meshes/JetArm_6DOF_LINK1_GREEN.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK2_GREEN" file="meshes/JetArm_6DOF_LINK2_GREEN.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK2_WHITE" file="meshes/JetArm_6DOF_LINK2_WHITE.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK2_BLACK" file="meshes/JetArm_6DOF_LINK2_BLACK.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK3_GREEN" file="meshes/JetArm_6DOF_LINK3_GREEN.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK3_WHITE" file="meshes/JetArm_6DOF_LINK3_WHITE.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK3_BLACK" file="meshes/JetArm_6DOF_LINK3_BLACK.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK4_USB_CAM_GREEN" file="meshes/JetArm_6DOF_LINK4_USB_CAM_GREEN.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK4_USB_CAM_WHITE" file="meshes/JetArm_6DOF_LINK4_USB_CAM_WHITE.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK4_USB_CAM_BLACK" file="meshes/JetArm_6DOF_LINK4_USB_CAM_BLACK.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK5_WHITE" file="meshes/JetArm_6DOF_LINK5_WHITE.STL" scale="0.001 0.001 0.001"/>
+    <!-- Collision meshes -->
+    <!-- <mesh name="JetArm_6DOF_BASE" file="meshes/JetArm_6DOF_BASE.STL" scale="0.001 0.001 0.001"/> -->
+    <mesh name="JetArm_6DOF_LINK1" file="meshes/JetArm_6DOF_LINK1.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK2" file="meshes/JetArm_6DOF_LINK2.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK3" file="meshes/JetArm_6DOF_LINK3.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK4_USB_CAM" file="meshes/JetArm_6DOF_LINK4_USB_CAM.STL" scale="0.001 0.001 0.001"/>
+    <mesh name="JetArm_6DOF_LINK5" file="meshes/JetArm_6DOF_LINK5.STL" scale="0.001 0.001 0.001"/>
+  </asset>
+  <worldbody>
+    <body name="link0">
+      <inertial pos="0 0 0" mass="0.1" diaginertia="1 1 1"/>
+      <geom quat="0.707107 0 0 -0.707107" class="jetarm/visual" rgba="0.4 0.9 0.4 1" mesh="JetArm_6DOF_BASE_GREEN"/>
+      <geom quat="0.707107 0 0 -0.707107" class="jetarm/visual" rgba="0.15 0.15 0.15 1" mesh="JetArm_6DOF_BASE_BLACK"/>
+      <geom quat="0.707107 0 0 -0.707107" class="jetarm/visual" rgba="0.8 0.8 0.8 1" mesh="JetArm_6DOF_BASE_WHITE"/>
+      <!-- <geom quat="0.707107 0 0 -0.707107" class="jetarm/visual" rgba="0.15 0.15 0.15 1" mesh="JetArm_6DOF_BASE_SCREEN"/> -->
+      <!-- Collision -->
+      <!-- <geom quat="0.707107 0 0 -0.707107" class="jetarm/collision" mesh="JetArm_6DOF_BASE"/> -->
+      <!-- <geom quat="0.707107 0 0 -0.707107" class="jetarm/collision" mesh="JetArm_6DOF_BASE_GREEN"/> -->
+      <geom quat="0.707107 0 0 -0.707107" class="jetarm/collision" mesh="JetArm_6DOF_BASE_BLACK"/>
+      <body name="link1" pos="0 0 0.103149">
+        <inertial pos="0 0 0" mass="0.001" diaginertia="1 1 1"/>
+        <joint name="joint1" pos="0 0 0" axis="0 0 1" limited="true" range="-2.1 2.1" actuatorfrcrange="-6 6" damping="0.01"/>
+        <geom class="jetarm/visual" rgba="0.15 0.15 0.15 1" mesh="JetArm_6DOF_LINK1_BLACK"/>
+        <geom class="jetarm/visual" rgba="0.4 0.9 0.4 1" mesh="JetArm_6DOF_LINK1_GREEN"/>
+        <!-- Collision -->
+        <geom type="mesh" class="jetarm/collision" mesh="JetArm_6DOF_LINK1"/>
+        <body name="link2" quat="0.707107 0.707107 0 0">
+          <inertial pos="0 0 0" mass="0.001" diaginertia="1 1 1"/>
+          <joint name="joint2" pos="0 0 0" axis="0 0 1" limited="true" range="-2.1 2.1" actuatorfrcrange="-6 6" damping="0.01"/>
+          <geom type="mesh" class="jetarm/visual" rgba="0.4 0.9 0.4 1" mesh="JetArm_6DOF_LINK2_GREEN"/>
+          <geom type="mesh" class="jetarm/visual" rgba="0.8 0.8 0.8 1" mesh="JetArm_6DOF_LINK2_WHITE"/>
+          <geom type="mesh" class="jetarm/visual" rgba="0.15 0.15 0.15 1" mesh="JetArm_6DOF_LINK2_BLACK"/>
+          <!-- Collision -->
+          <geom type="mesh" class="jetarm/collision" mesh="JetArm_6DOF_LINK2"/>
+          <body name="link3" pos="0 0.129418 0">
+            <inertial pos="0 0 0" mass="0.001" diaginertia="1 1 1"/>
+            <joint name="joint3" pos="0 0 0" axis="0 0 1" limited="true" range="-2.1 2.1" actuatorfrcrange="-6 6" damping="0.01"/>
+            <geom type="mesh" class="jetarm/visual" rgba="0.4 0.9 0.4 1" mesh="JetArm_6DOF_LINK3_GREEN"/>
+            <geom type="mesh" class="jetarm/visual" rgba="0.8 0.8 0.8 1" mesh="JetArm_6DOF_LINK3_WHITE"/>
+            <geom type="mesh" class="jetarm/visual" rgba="0.15 0.15 0.15 1" mesh="JetArm_6DOF_LINK3_BLACK"/>
+            <!-- Collision -->
+            <geom type="mesh" class="jetarm/collision" mesh="JetArm_6DOF_LINK3"/>
+            <!-- <body name="link4" pos="0 0.129418 0"> -->
+            <body name="link4" pos="0 0.129418 0">
+              <inertial pos="0 0 0" mass="0.001" diaginertia="1 1 1"/>
+              <joint name="joint4" pos="0 0 0" axis="0 0 1" limited="true" range="-2.1 2.1" actuatorfrcrange="-6 6" damping="0.01"/>
+              <geom type="mesh" class="jetarm/visual" rgba="0.4 0.9 0.4 1" mesh="JetArm_6DOF_LINK4_USB_CAM_GREEN"/>
+              <geom type="mesh" class="jetarm/visual" rgba="0.8 0.8 0.8 1" mesh="JetArm_6DOF_LINK4_USB_CAM_WHITE"/>
+              <geom type="mesh" class="jetarm/visual" rgba="0.15 0.15 0.15 1" mesh="JetArm_6DOF_LINK4_USB_CAM_BLACK"/>
+              <!-- Camera -->
+              <!-- <geom name="obstacle_box" size="0.01 0.01 0.01" pos="-0.05 0.06 0" quat="0 0 -1 1" type="capsule"/> -->
+              <!-- <camera name="cam" mode="fixed" pos="-0.05 0.06 0.00" quat="1 1 0 -1" fovy="45"/> -->
+              <camera name="cam" mode="fixed" pos="-0.05 0.06 0.00" euler="1.5707963 0 1.5707963" fovy="100"/>
+              <!-- Collision -->
+              <geom type="mesh" class="jetarm/collision" mesh="JetArm_6DOF_LINK4_USB_CAM"/>
+              <body name="link5" pos="0 0.0594531 0" quat="0.707107 -0.707107 0 0">
+                <inertial pos="0.00164025 0.013603 0.0632664" quat="0.70793 -0.0518743 0.0735996 0.700519" mass="0.0184988" diaginertia="1.00001 1.00001 1"/>
+                <joint name="joint5" pos="0 0 0" axis="0 0 1" limited="true" range="-2.1 2.1" actuatorfrcrange="-6 6" damping="0.001"/>
+                <geom type="mesh" class="jetarm/visual" rgba="0.8 0.8 0.8 1" mesh="JetArm_6DOF_LINK5_WHITE"/>
+                <!-- Collision -->
+                <geom type="mesh" class="jetarm/collision" rgba="0.8 0.8 0.8 1" mesh="JetArm_6DOF_LINK5"/>
+                <!-- <body name="attachment" pos="0 0 0" quat="0 1 0 0"> -->
+                <body name="attachment" pos="0 0 0">
+                  <site name="attachment_site"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <!-- Physical limits of the actuator. -->
+    <motor ctrllimited="true" ctrlrange="-2.1 2.1" joint="joint1" name="actuator1"/>
+    <motor ctrllimited="true" ctrlrange="-2.1 2.1" joint="joint2" name="actuator2"/>
+    <motor ctrllimited="true" ctrlrange="-2.1 2.1" joint="joint3" name="actuator3"/>
+    <motor ctrllimited="true" ctrlrange="-2.1 2.1" joint="joint4" name="actuator4"/>
+    <motor ctrllimited="true" ctrlrange="-2.1 2.1" joint="joint5" name="actuator5"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 0 0 0 0" ctrl="0 0 0 0 0"/>
+  </keyframe>
+</mujoco>
